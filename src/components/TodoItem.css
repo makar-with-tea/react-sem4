@@ -1,0 +1,29 @@
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left; /* выравнивание по левому краю */
+}
+  
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+  
+.todo-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+  
+.todo-item button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #4b0082;
+}
+  
+.todo-item button:hover {
+    color: #3e006c;
+}
