@@ -1,50 +1,19 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# Макаревич Мария, семинарское задание 4
+Создайте мини-приложение "Список задач" (ToDo List). Оно должно состоять из нескольких компонентов, как функциональных, так и классовых. Приложение должно включать следующие возможности:
+- Список задач. Отображайте список задач (циклический рендеринг) с возможностью добавления новых задач. Для каждой задачи используйте уникальный key.
+- Добавление и удаление задач. Реализуйте функционал добавления новой задачи в список, используя состояние компонента. Для удаления задачи используйте условный рендеринг: при нажатии на кнопку "Удалить" задача исчезает из списка.
+- Текущая и предыдущая задача. Используйте хук useRef для хранения предыдущего значения текущей задачи. Выведите текущую и предыдущую задачи в отдельном блоке.
+- Стилизация. Стилизуйте ваше приложение, используя как инлайн-стили, так и внешние CSS-файлы. Например, выделите выполненные задачи, изменив их цвет через CSS-класс.
+- Управление состоянием. Добавьте возможность пометить задачу как выполненную. Используйте метод изменения состояния в компонентах для обновления статуса задачи (например, через чекбокс).
+- Подъём состояния. Организуйте управление задачами в родительском компоненте, который будет передавать состояние дочерним компонентам через props.
+- Доступ к элементам DOM. Для поля ввода задачи используйте рефы (useRef), чтобы автоматически устанавливать фокус на поле после добавления новой задачи.
+  
+Требования к компонентам:
+- Создайте как минимум один классовый компонент для управления состоянием списка задач.
+- Используйте функциональные компоненты с хуками для управления состоянием и рендерингом отдельных элементов списка.
+- Для всех циклов рендеринга обеспечьте использование атрибута key.
+- Обязательно реализуйте возможность условного рендеринга для удаляемых задач и завершенных задач.
+  
+Дополнительные требования:
+- Визуализируйте разницу между текущей и предыдущей задачей через хук useRef.
+- Реализуйте компонент с инлайн-стилями и внешний CSS для остальных элементов интерфейса.
